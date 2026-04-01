@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.2.0](https://github.com/MIT-LCP/croissant-baker/compare/croissant-maker-v0.1.0...croissant-maker-v0.2.0) (2026-04-01)
+
+
+### Features
+
+* warn on missing Croissant spec-required fields and clarify dev … ([6b1e940](https://github.com/MIT-LCP/croissant-baker/commit/6b1e940bb01e75ecbf9e4e6459fb884a612be645))
+* warn on missing Croissant spec-required fields and clarify dev workflow in README ([d65bc56](https://github.com/MIT-LCP/croissant-baker/commit/d65bc56b9df068bc82b82fd650d7d1c65d9c6e22))
+
+
+### Bug Fixes
+
+* add warning log on skipping malformed image entries in summary ([87dc97e](https://github.com/MIT-LCP/croissant-baker/commit/87dc97e94892c9709b2173de797164a81b73ff68))
+* adjust num_images to reflect processed items only in image summary ([7634337](https://github.com/MIT-LCP/croissant-baker/commit/7634337e2c5ff038a1895462356710f0e389e9d0))
+* close ParquetFile handle to prevent resource leak ([#54](https://github.com/MIT-LCP/croissant-baker/issues/54)) ([b6240ea](https://github.com/MIT-LCP/croissant-baker/commit/b6240ea2871e658747f108748635ce89cd49212e))
+* close ParquetFile handle to prevent resource leak ([#54](https://github.com/MIT-LCP/croissant-baker/issues/54)) ([c6e1caf](https://github.com/MIT-LCP/croissant-baker/commit/c6e1caf6d2ec7bc16f09c3013a203b166e3acd9a))
+* resolve KeyError in image_handler properties ([#38](https://github.com/MIT-LCP/croissant-baker/issues/38)) ([494baf2](https://github.com/MIT-LCP/croissant-baker/commit/494baf211fcaed6cf2255b926d1bf31b910d9171))
+* resolve KeyError in image_handler properties ([#38](https://github.com/MIT-LCP/croissant-baker/issues/38)) ([ec93a4b](https://github.com/MIT-LCP/croissant-baker/commit/ec93a4b408c7598d2cc4498e031a0812b2351aa8))
+
 ## [0.1.0](https://github.com/MIT-LCP/croissant-maker/compare/croissant-maker-v0.0.1...croissant-maker-v0.1.0) (2026-03-27)
 
 
