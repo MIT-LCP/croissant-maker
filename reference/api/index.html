@@ -1267,7 +1267,7 @@ to mlc.Metadata unchanged.</p>
 
 
 <h3 id="croissant_baker.metadata_generator.MetadataGenerator.generate_metadata" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">generate_metadata</span><span class="p">()</span></code>
+            <code class="highlight language-python"><span class="n">generate_metadata</span><span class="p">(</span><span class="n">progress_callback</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h3>
 
@@ -1275,6 +1275,38 @@ to mlc.Metadata unchanged.</p>
     <div class="doc doc-contents ">
 
         <p>Generate complete Croissant metadata for the dataset.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>progress_callback</code>
+            </td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Optional callback with signature
+(current: int, total: int, file_path: str) -&gt; None
+called before processing each file.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
 
 
     </div>
