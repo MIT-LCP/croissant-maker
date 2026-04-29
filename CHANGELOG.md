@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/MIT-LCP/croissant-baker/compare/croissant-baker-v0.2.0...croissant-baker-v0.3.0) (2026-04-29)
+
+
+### Features
+
+* **eval:** add SMART FHIR bundle and bulk evaluations ([0eb7f58](https://github.com/MIT-LCP/croissant-baker/commit/0eb7f589b2ec01e7e4049539e351be5b321e5791))
+
 ## [0.2.0](https://github.com/MIT-LCP/croissant-baker/compare/croissant-baker-v0.1.2...croissant-baker-v0.2.0) (2026-04-29)
 
 
