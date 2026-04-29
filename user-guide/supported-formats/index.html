@@ -509,6 +509,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#dicom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DICOM
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nifti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NIfTI
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#hidden-files-and-directories" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -810,6 +832,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#dicom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DICOM
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nifti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NIfTI
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#hidden-files-and-directories" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -889,6 +933,16 @@
 <td><code>.jpg</code>, <code>.jpeg</code>, <code>.png</code>, <code>.gif</code>, <code>.bmp</code>, <code>.webp</code>, <code>.ico</code>, <code>.tiff</code>, <code>.tif</code></td>
 <td>Dimensions, color mode, encoding format</td>
 </tr>
+<tr>
+<td>DICOM</td>
+<td><code>.dcm</code>, <code>.dicom</code></td>
+<td>Image geometry, modality, pixel encoding, acquisition parameters</td>
+</tr>
+<tr>
+<td>NIfTI</td>
+<td><code>.nii</code>, <code>.nii.gz</code></td>
+<td>Spatial dimensions, voxel spacing, data type, TR for fMRI volumes</td>
+</tr>
 </tbody>
 </table>
 <h2 id="csv-and-tsv">CSV and TSV</h2>
@@ -918,6 +972,15 @@
 <p>WFDB (WaveForm DataBase) is the standard physiological signal format on PhysioNet. The handler reads the <code>.hea</code> header file and records signal channel names, sampling frequency, number of samples, and duration. Associated <code>.dat</code> binary files are listed as related files.</p>
 <h2 id="images">Images</h2>
 <p>Standard images are read with Pillow. Multi-band or scientific TIFFs fall back to <code>tifffile</code>. All images in a dataset are grouped into one <code>cr:FileSet</code> with a single summary <code>cr:RecordSet</code> covering width, height, color mode, and encoding format.</p>
+<h2 id="dicom">DICOM</h2>
+<p>DICOM (<code>.dcm</code>, <code>.dicom</code>) is the standard format for medical imaging (CT, MRI, PET, etc.). The handler uses <code>pydicom</code> with <code>stop_before_pixels=True</code> — only the file header is read, so large pixel arrays are never loaded into memory.</p>
+<p>Extracted metadata: image dimensions (rows, columns), number of frames, bits allocated per pixel, photometric interpretation, pixel spacing, slice thickness, modality, study/series description, manufacturer, and SOP class UID.</p>
+<p>Files with no extension are also accepted if they carry the DICOM magic bytes (<code>DICM</code> at byte offset 128), which is common in PACS exports.</p>
+<p>All DICOM files in a dataset are grouped into one <code>cr:FileSet</code> with a summary <code>cr:RecordSet</code> covering modality counts and dimension ranges.</p>
+<h2 id="nifti">NIfTI</h2>
+<p>NIfTI (<code>.nii</code>, <code>.nii.gz</code>) is the standard format for neuroimaging data (structural MRI, fMRI, CT). The handler uses <code>nibabel</code> and reads the header only — the voxel data array is never loaded.</p>
+<p>Extracted metadata: spatial dimensions (x, y, z), number of timepoints for 4D volumes, voxel spacing in mm, stored data type, NIfTI version (1 or 2), and repetition time (TR) for fMRI data.</p>
+<p>All NIfTI files in a dataset are grouped into one <code>cr:FileSet</code> with a summary <code>cr:RecordSet</code>. The <code>tr_seconds</code> field is only added when at least one 4D volume is present.</p>
 <h2 id="hidden-files-and-directories">Hidden files and directories</h2>
 <p>Files inside hidden directories (any path component starting with <code>.</code>) are always skipped. Use <code>--include</code> and <code>--exclude</code> glob patterns to further control which files are processed.</p>
 
