@@ -1000,7 +1000,7 @@ via the build_croissant protocol, and assembles the final JSON-LD.</p>
 
 
 <h3 id="croissant_baker.metadata_generator.MetadataGenerator.__init__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">dataset_path</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">license</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">citation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">date_published</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">creators</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">count_csv_rows</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">includes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">excludes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">rai_fields</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+            <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">dataset_path</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">license</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">citation</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">date_published</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">date_created</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">date_modified</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">creators</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">publisher</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">keywords</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">in_language</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">same_as</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sd_license</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sd_version</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">alternate_name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">is_live_dataset</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">temporal_coverage</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">usage_info</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">field_mappings</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">count_csv_rows</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">includes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">excludes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">rai_fields</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
 
 </h3>
 
@@ -1152,6 +1152,38 @@ via the build_croissant protocol, and assembles the final JSON-LD.</p>
           </tr>
           <tr class="doc-section-item">
             <td>
+                <code>date_created</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Creation date in ISO format.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>date_modified</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Last-modified date in ISO format.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
                 <code>creators</code>
             </td>
             <td>
@@ -1160,6 +1192,190 @@ via the build_croissant protocol, and assembles the final JSON-LD.</p>
             <td>
               <div class="doc-md-description">
                 <p>List of dicts with "name", "email", and/or "url" keys.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>publisher</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Name of the publishing organization (schema.org/Organization).</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>keywords</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="typing.List">List</span>[<span title="str">str</span>]]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Topical keywords for dataset discovery (schema.org/keywords).</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>in_language</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="typing.List">List</span>[<span title="str">str</span>]]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>BCP 47 language code(s) (e.g. "en"). Multiple supported.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>same_as</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="typing.List">List</span>[<span title="str">str</span>]]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>URLs of equivalent dataset records (e.g. DOI, mirror landing
+pages). Multiple values supported per schema.org/sameAs.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>sd_license</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>License of the metadata description itself, distinct from
+the data license (schema.org/sdLicense).</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>sd_version</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Version of the metadata description, distinct from
+<code>version</code>. Defaults to None — only emitted when set.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>alternate_name</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Short alias for the dataset (schema.org/alternateName).</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>is_live_dataset</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="bool">bool</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Mark dataset as a live, evolving stream.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>temporal_coverage</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Time period the data covers — schema.org accepts
+free text or ISO 8601 (e.g., "2008/2019", "2023-01-15").</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>usage_info</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="str">str</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>URL of a usage/consent policy (e.g., a DUO term URL,
+ODRL Offer URL).</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>field_mappings</code>
+            </td>
+            <td>
+                  <code><span title="typing.Optional">Optional</span>[<span title="typing.Dict">Dict</span>[<span title="str">str</span>, <span title="typing.Dict">Dict</span>[<span title="str">str</span>, <span title="object">object</span>]]]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Per-column overrides keyed by field name. Each value
+is a dict with optional <code>equivalent_property</code> (vocab URI) and
+<code>data_types</code> (list of vocab URIs). Used to link columns to
+external vocabularies like Wikidata/SNOMED/LOINC.</p>
               </div>
             </td>
             <td>
@@ -1224,8 +1440,8 @@ Defaults to False for performance.</p>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Native mlcroissant RAI metadata fields to pass through
-to mlc.Metadata unchanged.</p>
+                <p>Native mlcroissant RAI metadata fields, passed through
+to <code>mlc.Metadata</code> unchanged.</p>
               </div>
             </td>
             <td>

@@ -728,7 +728,21 @@
 <li><code>--citation TEXT</code>: Citation text (preferably BibTeX format)</li>
 <li><code>--dataset-version TEXT</code>: Dataset version (e.g., 1.0.0)</li>
 <li><code>--date-published TEXT</code>: Publication date (e.g., 2023-12-15 or 2023-12-15T10:30:00)</li>
+<li><code>--date-created TEXT</code>: Creation date (e.g., 2023-12-15 or 2023-12-15T10:30:00).</li>
+<li><code>--date-modified TEXT</code>: Last-modified date (e.g., 2023-12-15 or 2023-12-15T10:30:00).</li>
 <li><code>--creator TEXT</code>: Creator information. Format: 'Name[,Email[,URL]]'. Use multiple times for multiple creators. Examples: --creator 'John Doe' --creator 'Jane Smith,jane@example.com,https://jane.com'</li>
+<li><code>--publisher TEXT</code>: Publishing organization name (e.g., 'PhysioNet').</li>
+<li><code>--keywords TEXT</code>: Topical keywords for dataset discovery. Repeat (--keywords a --keywords b) or comma-delimit (--keywords 'a,b').</li>
+<li><code>--in-language TEXT</code>: BCP 47 language code (e.g., 'en'). Repeat or comma-delimit for multilingual datasets.</li>
+<li><code>--same-as TEXT</code>: URL of an equivalent record (e.g. DOI, mirror landing page). Repeat or comma-delimit.</li>
+<li><code>--sd-license TEXT</code>: License of the metadata description itself (e.g., 'CC0-1.0'), distinct from the data license.</li>
+<li><code>--sd-version TEXT</code>: Version of the metadata description (e.g., '1.0.0'), distinct from --dataset-version.</li>
+<li><code>--alternate-name TEXT</code>: Short alias for the dataset (e.g., 'MIMIC-IV').</li>
+<li><code>--is-live-dataset</code>: Mark the dataset as a live, evolving stream (e.g., a continuously-appended log).</li>
+<li><code>--temporal-coverage TEXT</code>: Time period the data covers. ISO 8601 recommended: '2008/2019' (interval) or '2023-01-15' (point).</li>
+<li><code>--usage-info TEXT</code>: URI pointing to a usage or consent policy. Any RFC 3986 scheme (http(s), urn, did, mailto). Example: 'http://purl.obolibrary.org/obo/DUO_0000042' (DUO term).</li>
+<li><code>--field-mappings FILE</code>: YAML file mapping columns to external vocabularies (Wikidata, SNOMED, LOINC). Schema: 'fields:\n  <col>:\n    equivalent_property: <URI>\n    data_types: [<URI>, ...]'. Note: column names match across ALL RecordSets, so 'id' applies to every 'id' column in the dataset.</li>
+<li><code>--field-mapping TEXT</code>: Link one column to an external vocabulary URI. Format: 'COLUMN=URI'. Example: --field-mapping 'age=http://www.wikidata.org/entity/Q11464'. Matches by bare column name across all RecordSets; a warning prints if a name resolves to multiple fields. Repeatable; combine with --field-mappings (flags override YAML).</li>
 <li><code>--count-csv-rows</code>: Count exact row numbers for CSV files (slow for large datasets)</li>
 <li><code>--rai-data-collection TEXT</code>: How and where the data was gathered.</li>
 <li><code>--rai-data-collection-type TEXT</code>: Collection type, e.g. 'observational'. Can be used multiple times.</li>
