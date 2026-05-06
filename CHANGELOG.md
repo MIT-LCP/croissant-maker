@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.3.0](https://github.com/MIT-LCP/croissant-baker/compare/croissant-baker-v0.2.0...croissant-baker-v0.3.0) (2026-05-04)
+
+
+### Features
+
+* **eval:** add DICOM, NIfTI, and BIDS sidecar evaluations ([f228b61](https://github.com/MIT-LCP/croissant-baker/commit/f228b61407d391d0668bc2c57f3353c2d18b087a))
+* **eval:** add DICOM, NIfTI, and BIDS sidecar evaluations ([ffc2b3b](https://github.com/MIT-LCP/croissant-baker/commit/ffc2b3b9368384237490146821e35eb0f5573901))
+* **eval:** add NeurIPS 2025 D&B cross-domain evaluation ([3a27618](https://github.com/MIT-LCP/croissant-baker/commit/3a27618b379e39e02f1610835869b516168b2a6d))
+* **eval:** add NeurIPS 2025 D&B cross-domain evaluation ([c52dca7](https://github.com/MIT-LCP/croissant-baker/commit/c52dca731c851730641d5d16f14047d18eb07a18))
+* **eval:** add SMART FHIR bundle and bulk evaluations ([0eb7f58](https://github.com/MIT-LCP/croissant-baker/commit/0eb7f589b2ec01e7e4049539e351be5b321e5791))
+
+
+### Bug Fixes
+
+* close field-id and sub-field guard gaps ([3802036](https://github.com/MIT-LCP/croissant-baker/commit/3802036c029f234420fece644d2cb25d78903887))
+* **eval:** show download errors instead of swallowing them ([c3bcfde](https://github.com/MIT-LCP/croissant-baker/commit/c3bcfdebd6704a320016a3b2b2d4f66ca51da84a))
+* prevent JSON-LD [@id](https://github.com/id) collisions across all handlers ([5e0db5f](https://github.com/MIT-LCP/croissant-baker/commit/5e0db5fbe41147608eaa26c18e10655b7c7a098a))
+
 ## [0.2.0](https://github.com/MIT-LCP/croissant-baker/compare/croissant-baker-v0.1.2...croissant-baker-v0.2.0) (2026-04-29)
 
 
