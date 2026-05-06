@@ -3,6 +3,12 @@ name: Release Please
 on:
   push:
     branches: [main]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Git tag to publish to PyPI (format: croissant-baker-vX.Y.Z)'
+        required: true
+        type: string
 
 permissions:
   contents: write
@@ -22,7 +28,6 @@ jobs:
           manifest-file: .release-please-manifest.json
 
   # Runs only when a release PR is merged and a GitHub Release is created.
-  # Add PyPI publish steps here when ready (e.g. uv build + twine upload).
   publish:
     needs: release-please
     if: needs.release-please.outputs.release_created == 'true'
@@ -30,6 +35,28 @@ jobs:
     environment: pypi
     steps:
       - uses: actions/checkout@v6
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v7
+
+      - name: Build package
+        run: uv build --wheel
+
+      - name: Publish to PyPI
+        env:
+          UV_PUBLISH_TOKEN: ${{ secrets.PYPI_API_TOKEN }}
+        run: uv publish
+
+  # Manual fallback for when the auto publish job didn't fire
+  # (e.g. release-please job failed after the GitHub Release was created).
+  manual-publish:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    environment: pypi
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: ${{ inputs.tag }}
 
       - name: Set up uv
         uses: astral-sh/setup-uv@v7
