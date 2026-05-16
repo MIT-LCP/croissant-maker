@@ -8,7 +8,8 @@
 
 <p align="center">
   <a href="https://pypi.org/project/croissant-baker/"><img src="https://img.shields.io/pypi/v/croissant-baker?logo=pypi&logoColor=white" alt="PyPI"></a>&nbsp;&nbsp;
-  <a href="https://github.com/MIT-LCP/croissant-baker"><img src="https://img.shields.io/badge/GitHub-Source_Code-blue?logo=github" alt="GitHub"></a>
+  <a href="https://github.com/MIT-LCP/croissant-baker"><img src="https://img.shields.io/badge/GitHub-Source_Code-blue?logo=github" alt="GitHub"></a>&nbsp;&nbsp;
+  <a href="https://arxiv.org/abs/2605.15079"><img src="https://img.shields.io/badge/arXiv-2605.15079-b31b1b.svg" alt="arXiv"></a>
 </p>
 
 ## Installation
@@ -48,3 +49,20 @@ See the [Getting Started](getting-started.md) guide for a full walkthrough.
 
 - [:fontawesome-brands-github: Source code on GitHub](https://github.com/MIT-LCP/croissant-baker)
 - [:fontawesome-brands-python: Package on PyPI](https://pypi.org/project/croissant-baker/)
+- [:material-file-document-outline: arXiv preprint (2605.15079)](https://arxiv.org/abs/2605.15079)
+
+## Citation
+
+If you use Croissant Baker in your research, please cite our [arXiv preprint](https://arxiv.org/abs/2605.15079):
+
+```bibtex
+@misc{attrach2026croissantbakermetadatageneration,
+      title={Croissant Baker: Metadata Generation for Discoverable, Governable, and Reusable ML Datasets},
+      author={Rafi Al Attrach and Rajna Fani and Sebastian Lobentanzer and Joan Giner-Miguelez and Debanshu Das and Varuni H. K. and Nobin Sarwar and Rajat Ghosh and Anwai Archit and Surbhi Motghare and Christina Conrad Parry and Luis Oala and Lara Grosso and Joaquin Vanschoren and Steffen Vogler and Sujata Goswami and Eric S. Rosenthal and Marzyeh Ghassemi and Matthew McDermott and Tom Pollard},
+      year={2026},
+      eprint={2605.15079},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2605.15079},
+}
+```

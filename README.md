@@ -10,6 +10,7 @@
   <a href="https://docs.astral.sh/uv/"><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json" alt="uv"></a>
   <a href="https://github.com/MIT-LCP/croissant-baker/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
   <a href="https://pypi.org/project/croissant-baker/"><img src="https://img.shields.io/pypi/v/croissant-baker?logo=pypi" alt="PyPI"></a>
+  <a href="https://arxiv.org/abs/2605.15079"><img src="https://img.shields.io/badge/arXiv-2605.15079-b31b1b.svg" alt="arXiv"></a>
   <a href="https://github.com/MIT-LCP/croissant-baker/pulls"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"></a>
 </p>
 
@@ -90,6 +91,22 @@ See the [documentation](https://lcp.mit.edu/croissant-baker/) for full CLI refer
 ## Contributing
 
 See [CONTRIBUTING.md](https://raw.githubusercontent.com/MIT-LCP/croissant-baker/main/CONTRIBUTING.md) for guidelines and [DEVELOPMENT.md](https://raw.githubusercontent.com/MIT-LCP/croissant-baker/main/DEVELOPMENT.md) for setup, testing, releases, and how to add new file handlers.
+
+## Citation
+
+If you use Croissant Baker in your research, please cite our [arXiv preprint](https://arxiv.org/abs/2605.15079):
+
+```bibtex
+@misc{attrach2026croissantbakermetadatageneration,
+      title={Croissant Baker: Metadata Generation for Discoverable, Governable, and Reusable ML Datasets},
+      author={Rafi Al Attrach and Rajna Fani and Sebastian Lobentanzer and Joan Giner-Miguelez and Debanshu Das and Varuni H. K. and Nobin Sarwar and Rajat Ghosh and Anwai Archit and Surbhi Motghare and Christina Conrad Parry and Luis Oala and Lara Grosso and Joaquin Vanschoren and Steffen Vogler and Sujata Goswami and Eric S. Rosenthal and Marzyeh Ghassemi and Matthew McDermott and Tom Pollard},
+      year={2026},
+      eprint={2605.15079},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2605.15079},
+}
+```
 
 ## License
 
