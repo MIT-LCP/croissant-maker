@@ -53,10 +53,11 @@ class OMEZarrHandler(FileTypeHandler):
         multiscales = zattrs.get("multiscales", [])
         if multiscales:
             props["multiscales"] = multiscales
+            # Considering only a single multiscale; this is by far the most common case.
             first_ms = multiscales[0]
             props["ome_zarr_version"] = first_ms.get("version", "unknown")
             props["axes"] = first_ms.get("axes", [])
-            props["num_resolutions"] = len(first_ms.get("datasets", []))
+            props["num_scales"] = len(first_ms.get("datasets", []))
 
         return {
             "file_name": file_path.name,

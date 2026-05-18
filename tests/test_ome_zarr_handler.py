@@ -87,3 +87,60 @@ def test_extract_metadata_axes(handler: OMEZarrHandler) -> None:
 def test_extract_metadata_file_not_found(handler: OMEZarrHandler) -> None:
     with pytest.raises(FileNotFoundError):
         handler.extract_metadata(Path("/nonexistent/image.zarr"))
+
+
+# ---------------------------------------------------------------------------
+# build_croissant
+# ---------------------------------------------------------------------------
+
+
+def _ome_zarr_meta(name: str, version: str = "0.4", num_scales: int = 5) -> dict:
+    """Helper to create mock OME-Zarr metadata for testing."""
+    return {
+        "file_name": name,
+        "encoding_format": "application/x+zarr",
+        "ome_zarr_properties": {
+            "ome_zarr_version": version,
+            "num_scales": num_scales,
+            "axes": [
+                {"name": "t", "type": "time"},
+                {"name": "c", "type": "channel"},
+                {"name": "z", "type": "space"},
+                {"name": "y", "type": "space"},
+                {"name": "x", "type": "space"},
+            ],
+        },
+    }
+
+
+def test_build_croissant_returns_fileset_and_recordset(handler: OMEZarrHandler) -> None:
+    metas = [_ome_zarr_meta("a.zarr"), _ome_zarr_meta("b.zarr")]
+    filesets, record_sets = handler.build_croissant(metas, ["file_0", "file_1"])
+
+    assert len(filesets) == 1
+    assert len(record_sets) == 1
+
+
+def test_build_croissant_fileset_includes(handler: OMEZarrHandler) -> None:
+    metas = [_ome_zarr_meta("a.zarr")]
+    filesets, _ = handler.build_croissant(metas, ["file_0"])
+    assert "**/*.zarr" in filesets[0].includes
+
+
+def test_build_croissant_recordset_name(handler: OMEZarrHandler) -> None:
+    metas = [_ome_zarr_meta("a.zarr")]
+    _, record_sets = handler.build_croissant(metas, ["file_0"])
+    assert record_sets[0].name == "ome_zarr"
+
+
+def test_build_croissant_fields(handler: OMEZarrHandler) -> None:
+    metas = [_ome_zarr_meta("a.zarr")]
+    _, record_sets = handler.build_croissant(metas, ["file_0"])
+    field_names = {f.name for f in record_sets[0].fields}
+    assert {"ome_zarr_version", "num_scales", "axes"} <= field_names
+
+
+def test_build_croissant_description_contains_version(handler: OMEZarrHandler) -> None:
+    metas = [_ome_zarr_meta("a.zarr", version="0.4")]
+    _, record_sets = handler.build_croissant(metas, ["file_0"])
+    assert "0.4" in record_sets[0].description
