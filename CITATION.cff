@@ -1,0 +1,62 @@
+cff-version: 1.2.0
+title: Croissant Baker
+message: >-
+  If you use Croissant Baker in your research, please cite the
+  preprint listed under preferred-citation below.
+type: software
+authors: &author_list
+  - given-names: Rafi
+    family-names: Al Attrach
+  - given-names: Rajna
+    family-names: Fani
+  - given-names: Sebastian
+    family-names: Lobentanzer
+  - given-names: Joan
+    family-names: Giner-Miguelez
+  - given-names: Debanshu
+    family-names: Das
+  - given-names: Varuni
+    family-names: H. K.
+  - given-names: Nobin
+    family-names: Sarwar
+  - given-names: Rajat
+    family-names: Ghosh
+  - given-names: Anwai
+    family-names: Archit
+  - given-names: Surbhi
+    family-names: Motghare
+  - given-names: Christina
+    family-names: Conrad Parry
+  - given-names: Luis
+    family-names: Oala
+  - given-names: Lara
+    family-names: Grosso
+  - given-names: Joaquin
+    family-names: Vanschoren
+  - given-names: Steffen
+    family-names: Vogler
+  - given-names: Sujata
+    family-names: Goswami
+  - given-names: Eric S.
+    family-names: Rosenthal
+  - given-names: Marzyeh
+    family-names: Ghassemi
+  - given-names: Matthew
+    family-names: McDermott
+  - given-names: Tom
+    family-names: Pollard
+repository-code: https://github.com/MIT-LCP/croissant-baker
+url: https://lcp.mit.edu/croissant-baker/
+license: MIT
+preferred-citation:
+  type: article
+  title: "Croissant Baker: Metadata Generation for Discoverable, Governable, and Reusable ML Datasets"
+  authors: *author_list
+  year: 2026
+  month: 5
+  url: https://arxiv.org/abs/2605.15079
+  doi: 10.48550/arXiv.2605.15079
+  identifiers:
+    - type: other
+      value: "arXiv:2605.15079"
+      description: arXiv preprint identifier
