@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.1](https://github.com/MIT-LCP/croissant-baker/compare/croissant-baker-v0.3.0...croissant-baker-v0.3.1) (2026-05-18)
+
+
+### Documentation
+
+* add arXiv preprint citation ([ad8a5d3](https://github.com/MIT-LCP/croissant-baker/commit/ad8a5d3fbd23c8b6fc8b693ac9c9d04ac9564e92))
+* add arXiv preprint citation ([2999a91](https://github.com/MIT-LCP/croissant-baker/commit/2999a91ceddd23506bbd764996d2c5988798a76f))
+
 ## [0.3.0](https://github.com/MIT-LCP/croissant-baker/compare/croissant-baker-v0.2.0...croissant-baker-v0.3.0) (2026-05-04)
 
 
