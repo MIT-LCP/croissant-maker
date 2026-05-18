@@ -1,5 +1,6 @@
 """OME-Zarr handler for multiscale bioimaging data (Zarr v2)."""
 
+import json
 from pathlib import Path
 
 from croissant_baker.handlers.base_handler import FileTypeHandler
@@ -39,7 +40,34 @@ class OMEZarrHandler(FileTypeHandler):
         if not file_path.exists():
             raise FileNotFoundError(f"OME-Zarr store not found: {file_path}")
 
-        raise NotImplementedError("extract_metadata not yet implemented")
+        zattrs_path = file_path / ".zattrs"
+        if not zattrs_path.exists():
+            raise ValueError(f"Missing .zattrs in OME-Zarr store: {file_path}")
+
+        with open(zattrs_path, "r", encoding="utf-8") as f:
+            zattrs = json.load(f)
+
+        props: dict = {}
+
+        # Extract multiscales metadata (OME-Zarr core)
+        multiscales = zattrs.get("multiscales", [])
+        if multiscales:
+            props["multiscales"] = multiscales
+            first_ms = multiscales[0]
+            props["ome_zarr_version"] = first_ms.get("version", "unknown")
+            props["axes"] = first_ms.get("axes", [])
+            props["num_resolutions"] = len(first_ms.get("datasets", []))
+
+        return {
+            "file_name": file_path.name,
+            # See https://github.com/zarr-developers/zarr-specs/issues/123 for the discussion
+            # "mime type / encoding format conventions #123" for Zarr
+            # There is not really an established convention.
+            # Data one lists application/x+zarr (https://cn.dataone.org/cn/v2/formats)
+            # vnd.zarr is also used by some.
+            "encoding_format": "application/x+zarr",
+            "ome_zarr_properties": props,
+        }
 
     def build_croissant(
         self, file_metas: list[dict], file_ids: list[str]
